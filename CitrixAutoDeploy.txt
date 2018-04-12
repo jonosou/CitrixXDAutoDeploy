@@ -12,7 +12,7 @@ $hostResource = "POC030" #Hypervisor management\
 $machineCatalogName = "TESTJS01"\
 $machineCatalogDesc = "W10-Gold-v20180411-1 - Post-VDA 7.15.template"\
 $domain = "ntnxlab.local"\
-$orgUnit = "DC=ntnxlab,DC=local"\
+$orgUnit = "CN=Computers,DC=ntnxlab,DC=local"\
 $namingScheme = "TEST-JS-###" #AD machine account naming conventions\
 $namingSchemeType = "Numeric" #Also: Alphabetic\
 $allocType = "Random" #Also: Static\
