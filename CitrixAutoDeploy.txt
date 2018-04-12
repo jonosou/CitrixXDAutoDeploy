@@ -75,7 +75,8 @@ If (Test-ProvSchemeNameAvailable -AdminAddress $adminAddress -ProvisioningScheme
   # Create a new provisioning scheme - the configuration of VMs to deploy. This will copy the master image to the target datastore.\
   Write-Verbose "Creating new provisioning scheme using $VMDetails.FullPath"\
   # Provision VMs based on the selected snapshot.\
-  $provTaskId = New-ProvScheme -AdminAddress $adminAddress -ProvisioningSchemeName $machineCatalogName -HostingUnitName $storageResource -MasterImageVM "XDHyp:\\HostingUnits\\POC030\\W10-Gold-v20180411-1 - Post-VDA 7.15.template" -CleanOnBoot -IdentityPoolName $identPool.IdentityPoolName -VMCpuCount $vCPUs -VMMemoryMB $vRAM -RunAsynchronously\
+  $MasterImageVMValue = "XDHyp:\HostingUnits\POC030\W10-Gold-v20180411-1 - Post-VDA 7.15.template"
+  $provTaskId = New-ProvScheme -AdminAddress $adminAddress -ProvisioningSchemeName $machineCatalogName -HostingUnitName  $storageResource -MasterImageVM $MasterImageVMValue -CleanOnBoot -IdentityPoolName $identPool.IdentityPoolName -VMCpuCount   $vCPUs -VMMemoryMB $vRAM -RunAsynchronously
   $provTask = Get-ProvTask -AdminAddress $adminAddress -TaskId $provTaskId\
 \
   # Track the progress of copying the master image\
